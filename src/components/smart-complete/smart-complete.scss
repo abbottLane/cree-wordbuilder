@@ -1,0 +1,118 @@
+.app {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  .header {
+      text-align: left;
+      background-color: rgb(202, 67, 33);
+      height: 25px;
+      font-size: medium;
+      font: medium;
+      color: rgb(255, 255, 255);
+      .logo {
+          animation: app-logo-spin infinite 20s linear;
+          height: 80px;
+          transform-box: fill-box;
+      }
+    }
+    .text-display{
+      text-align: center;
+      outline-style: dashed;
+      background-color: #f5f5f5;
+      height: 130px;
+      padding: 50px;
+      font-size: xx-large;
+      color: rgb(0, 0, 0);
+
+    }
+    .copyButton{
+      position: absolute;
+      padding: 5px 20px 5px 20px;
+      left: 15px;
+      top: 251px;
+      font-size: medium;
+      color: rgb(0, 0, 0);
+      background-color: #fff8d7;
+    }
+    
+    .body {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 0px;
+        .row {
+          display: flex;
+          /* Create two equal columns that sits next to each other */
+          .column {
+            flex: 50%;
+            padding: 10px;
+            .searchbox {
+              position: absolute;
+              padding: 2px 10px 2px 0px;
+              .inputbox {
+                border: 2px solid grey;
+                border-radius: 5px;
+                font-size: large;
+                height: 45px;
+                width: 300px;
+                padding: 2px 10px 2px 10px;
+                outline: 4;
+                background-color: #f5f5f5;
+              }
+              .inputButton{
+                position: absolute;
+                padding: 15px 20px 15px 20px;
+                left: 325px;
+                font-size: medium;
+                color: rgb(255, 255, 255);
+                background-color: rgb(202, 67, 33);
+              }
+            }
+              .results {
+                  position: absolute;
+                  left:0px;
+                  top: 52px;
+                  width: 320px;
+                  padding: 2px 10px 2px 2px;
+                  .hit {
+                      padding-left: 5px;
+                      flex-direction: row;
+                      align-items: center;
+                      height: 23px;
+                      background-color: #f5f5f5;
+                      border: 1px solid black;
+                  }
+              }            
+              display: flex;
+              flex-direction: row;
+              .dictresults {
+                position: absolute;
+                padding: 2px 10px 2px 2px;
+                left: 450px;
+                .analysis{
+                  position: absolute;
+                  white-space: pre-wrap;
+                  background-color: #fff8d7;
+                  border: 1px solid black;
+                  padding: 10px;
+                  width: 330px;
+                }
+                .dictentry{
+                  position: absolute;
+                  background-color: #fff8d7;
+                  border: 1px solid black;
+                  padding: 10px;
+                  left: 375px;
+                  width: 330px;
+                  border: 1px solid black;
+                }
+              }
+            }
+        }
+        
+    }
+  }  
+
+  @keyframes app-logo-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  

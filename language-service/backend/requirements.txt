@@ -1,0 +1,5 @@
+# requirements for python backend
+fastapi
+uvicorn[standard]
+future
+hfst
