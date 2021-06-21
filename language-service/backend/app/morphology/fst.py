@@ -1,7 +1,6 @@
 import re
 from re import DEBUG
 import time
-from app.dictionary.search import entries_by_root
 from app.morphology.hfst_autocomplete import HFSTModel
 
 completions = HFSTModel('app/morphology/crk-infl-morpheme-completion.weighted.hfstol')

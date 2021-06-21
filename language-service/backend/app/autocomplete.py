@@ -1,6 +1,5 @@
 from logging import NullHandler
 from app.morphology.fst import process_autocomplete_query
-from app.dictionary.search import entries_by_results
 from typing import Dict, Tuple, List
 import logging
 logging.basicConfig(level=logging.INFO)
