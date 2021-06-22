@@ -8,12 +8,13 @@ async def search(searchdata: Dict) -> Tuple[List[str], int, Tuple[List[str], Lis
     logging.info("Completion Query: " + searchdata['search'])
     limit = searchdata['limit'] if searchdata['limit'] else 10
     results = await process_autocomplete_query(searchdata['search'])
-    # check each result to see if it is valid for analysis
+    
+    # dedupe
     annotated_results = []
-    for i,r in enumerate(results[:limit]):        
-        annotated_results.append((r, False, "", r))
+    res_set = set()
+    for i,r in enumerate(results):   
+        if r not in res_set:     
+            annotated_results.append((r, False, "", r))
+            res_set.add(r)
         
-    return (list(set(annotated_results)), len(results), None)
-
-def make_readable_result(r):
-    return r['english'] #r['analyzed_form'] #+ "\n" + r['english']
+    return (annotated_results, len(results), None)
