@@ -1,5 +1,5 @@
 install:
-	virtualenv venv -p python3.8;
+	virtualenv venv -p python3.7;
 	. venv/bin/activate; 
 	pip install -r requirements.txt; 
 
