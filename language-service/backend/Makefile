@@ -1,5 +1,5 @@
 install:
-	virtualenv venv -p python3.7;
+	virtualenv -p python3.7 venv;
 	. venv/bin/activate; 
 	pip install -r requirements.txt; 
 
