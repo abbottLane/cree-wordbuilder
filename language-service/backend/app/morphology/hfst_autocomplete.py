@@ -13,8 +13,8 @@ class HFSTModel:
     def apply_down(self, word):
         # do lookup
         # start = time.time()
-        results = [x for x in self.fst.lookup(word, max_number=30)]
-        results = [re.sub("\@.*?\@", "", x[0]) for x in results] # strip out flag diacritics
+        results = [x for x in self.fst.lookup(word, max_number=50)]
+        results = [re.sub("\@.*?\@", "", x[0]) + " " + str(x[1]) for x in results] # strip out flag diacritics
         # stop = time.time()
         return results
 

@@ -12,11 +12,8 @@ async def process_autocomplete_query(query_text):
         query_text = query_text.split()[0]
         query_text = re.sub("^", "", query_text)
 
-        print("QUERY: " + query_text)
-
         start = time.time()
         results = completions.apply_down(query_text)
         end = time.time()
 
-        print("RESULTS: (" + str(end-start) + ") " + str(results))
     return results
