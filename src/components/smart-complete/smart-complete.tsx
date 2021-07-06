@@ -74,8 +74,8 @@ export class SmartComplete {
     }
 
     onHitClick(item){
-        this.textInput.value = item[0]
-        this.currentWord = item[0]
+        this.textInput.value = item[0].split(" ")[0]
+        this.currentWord = item[0].split(" ")[0]
         this.preThrottled()
     }
     copyToClipboard(currentWord) {
