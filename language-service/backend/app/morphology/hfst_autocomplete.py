@@ -1,28 +1,25 @@
-import hfst
 import re
 import time
-import pexpect
+from hfst_optimized_lookup import TransducerFile
+from subprocess import Popen, PIPE, STDOUT
 import sys
 
 class HFSTModel:
     def __init__(self, modelPath):
         super().__init__()
         self.modelPath = modelPath
-        hfst.set_default_fst_type(hfst.ImplementationType.HFST_OLW_TYPE)
-        self.hfst_process = hfst.HfstInputStream(self.modelPath)
-        self.fst = self.hfst_process.read()
-        self.num_results = 25
+        self.num_results = 15
        
 
     def apply_down(self, word):
         # do lookup
-        start = time.time()
-        results = self.fst.lookup(word)[:self.num_results]
-        # print("RESULT::::" + str(results))
-        results = [re.sub("\@.*?\@", "", x[0]) + " " + str(x[1]) for x in results] # strip out flag diacritics
+        start = time.time()        
+        p = Popen(["hfst-optimized-lookup", "-q",  "-u", "-n", str(self.num_results), self.modelPath], stdout=PIPE, stdin=PIPE, stderr=STDOUT )
+        results = p.communicate(input=word.encode('utf-8'))[0]
+        print("RESULTS:\n" + results.decode())
         stop = time.time()
         print("INFO: model query time: " + str(stop-start))
-        return results
+        return [x.split('\t')[1] for x in results.decode().split('\n') if x != ""] # return a list of the second column entries
 
 
        

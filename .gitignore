@@ -4,5 +4,7 @@ dist/
 venv/
 language-service/backend/venv
 language-service/backend/__pycache__
+language-service/backend/app/morphology/__pycache__
+language-service/backend/app/__pycache__
 language-service/backend/.vscode
 language-service/backend/app/morphology/crk-infl-morpheme-completion.weighted.hfstol
