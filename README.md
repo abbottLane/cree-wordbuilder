@@ -12,6 +12,8 @@ Demo app to support the Plains Cree morph autocomplete FST models.
 
 4. Make sure you have `python` version 3.6.5 or higher installed.
 
+6. Make sure you have the `hfst` system binaries installed and properly configures to be found on your PATH 
+
 ## Run the client and server
 
 1. Open a terminal window and start the client by navigating to the project root and typing `make run`. This will install a bunch of node dependencies and start the client.
