@@ -1,5 +1,5 @@
 install:
-	test -d venv || virtualenv venv -p python3.9
+	test -d venv || virtualenv venv -p python3.8
 	. venv/bin/activate; pip install --upgrade pip
 	. venv/bin/activate; pip install cython
 	. venv/bin/activate; pip install -Ur requirements.txt
